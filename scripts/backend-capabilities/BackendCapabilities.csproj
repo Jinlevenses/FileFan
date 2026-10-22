@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>filefan-caps</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseAppHost>true</UseAppHost>
+    <RestoreIgnoreFailedSources>true</RestoreIgnoreFailedSources>
+    <BackendDirectory Condition="'$(BackendDirectory)' == ''">../../artifacts/runtime/Filee/Filee-1.12.0-osx-arm64/Filee.app/Contents/MacOS</BackendDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Filee.Core"><HintPath>$(BackendDirectory)/Filee.Core.dll</HintPath></Reference>
+    <Reference Include="Filee.Engines"><HintPath>$(BackendDirectory)/Filee.Engines.dll</HintPath></Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions"><HintPath>$(BackendDirectory)/Microsoft.Extensions.Logging.Abstractions.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>
